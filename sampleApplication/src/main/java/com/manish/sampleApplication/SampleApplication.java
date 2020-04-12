@@ -18,10 +18,15 @@ public class SampleApplication {
 	}
 	
 	@RequestMapping(value = "/")
-	public String sampleEndPoint() {
+	public String endPoint() {
 		return "Sample Application deployed successfully in AWS";
 	}
-	
+    
+    
+	@GetMapping(value = "/demo")
+	public String sampleDemoEndPoint(@PathVariable("name") String name) {
+		return "Welcome "+name;
+	}
 	
 	@GetMapping(value = "/{name}")
 	public String sampleEndPointWelcomeMsg(@PathVariable("name") String name) {
